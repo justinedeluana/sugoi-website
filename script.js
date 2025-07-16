@@ -21,6 +21,41 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // Navbar scroll effect - NEW FUNCTIONALITY
+    const navbar = safeQuerySelector('.navbar');
+    const heroSection = safeQuerySelector('.hero-section');
+    
+    function handleNavbarScroll() {
+        if (!navbar || !heroSection) return;
+        
+        const heroHeight = heroSection.offsetHeight;
+        const scrollPosition = window.scrollY;
+        
+        // If we're in the hero section (top of page)
+        if (scrollPosition < heroHeight - 100) {
+            navbar.classList.add('transparent');
+            navbar.classList.remove('scrolled');
+        } else {
+            // If we've scrolled past the hero section
+            navbar.classList.remove('transparent');
+            navbar.classList.add('scrolled');
+        }
+    }
+    
+    // Initial navbar state
+    handleNavbarScroll();
+    
+    // Update navbar on scroll with throttling for performance
+    let navbarScrollTimeout;
+    window.addEventListener('scroll', function() {
+        if (navbarScrollTimeout) {
+            window.cancelAnimationFrame(navbarScrollTimeout);
+        }
+        navbarScrollTimeout = window.requestAnimationFrame(handleNavbarScroll);
+    });
+
+    // ...existing code...
+
     // Mobile menu functionality
     const mobileMenuBtn = safeQuerySelector('.mobile-menu-btn');
     const navLinks = safeQuerySelector('.nav-links');
