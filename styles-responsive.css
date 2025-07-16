@@ -1,0 +1,794 @@
+/* Responsive design styles - All media queries and responsive layouts */
+
+/* Large desktop screens */
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+    .nav-links {
+        gap: 20px;
+    }
+}
+
+/* Tablet and medium desktop screens */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .navbar {
+        padding: 0 20px;
+    }
+    
+    .nav-links {
+        gap: 50px;
+    }
+    
+    .nav-links li a {
+        font-size: 14px;
+    }
+    
+    /* About section responsive */
+    .about-content h2 {
+        font-size: 2.8rem;
+    }
+    
+    .about-content {
+        max-width: 500px;
+        padding: 30px;
+    }
+    
+    .service-card {
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    .service-image {
+        height: 250px;
+    }
+    
+    /* Artist section responsive - UPDATED */
+    .artist-carousel {
+        gap: 20px;
+    }
+    
+    .artist-card {
+        min-width: 280px;
+        max-width: 280px;
+    }
+    
+    .artist-image {
+        height: 240px;
+    }
+    
+    .carousel-controls {
+        gap: 30px;
+    }
+    
+    /* Team section responsive */
+    .founder-image {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .founder-info {
+        padding: 30px;
+    }
+    
+    .team-members {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+    }
+    
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+}
+
+/* Mobile menu styling - 768px breakpoint */
+@media screen and (max-width: 768px) {
+    .navbar {
+        padding: 0 15px;
+        justify-content: space-between;
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    /* Mobile navbar transparency override */
+    .navbar.transparent {
+        background: rgba(0, 0, 0, 0.3) !important; /* Slight transparency for mobile visibility */
+    }
+    
+    .logo {
+        margin-left: 0;
+    }
+    
+    /* Mobile menu button */
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    /* Hide Book Now button when menu is active */
+    .nav-btn {
+        display: none;
+    }
+    
+    /* Mobile Navigation Menu */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.95);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 80px 0;
+        transition: right 0.4s ease;
+        z-index: 100;
+        transform: none;
+        left: auto;
+    }
+    
+    .nav-links.active {
+        right: 0;
+    }
+    
+    .nav-links li {
+        margin: 15px 0;
+    }
+    
+    .nav-links li a {
+        font-size: 20px;
+        padding: 10px 0;
+        display: block;
+    }
+
+    /* Remove underline effect for mobile */
+    .nav-links li a::after {
+        display: none;
+    }
+    
+    /* Show mobile book now button */
+    .nav-links.active::after {
+        content: "";
+        display: block;
+        margin: 20px auto;
+        width: 40px;
+        height: 2px;
+        background: rgba(255,255,255,0.3);
+    }
+    
+    .nav-links.active::before {
+        content: "Book Now";
+        display: block;
+        margin: 30px auto 0;
+        background: #ba6d2f;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 25px;
+        font-weight: 600;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    
+    /* Mobile About Section - FIXED: Consistent spacing */
+    .about-content-wrapper {
+        padding: 15px; /* Reduced padding for better mobile spacing */
+        align-items: flex-start;
+        padding-top: 72px;
+        margin-bottom: 20px; /* Add bottom margin for section separation */
+    }
+    
+    .about-content {
+        max-width: 100%;
+        margin: 0;
+        padding: 20px 15px; /* Reduced padding for mobile */
+        gap: 15px; /* Add consistent gap */
+    }
+    
+    .about-content h2 {
+        font-size: 2.2rem; /* Slightly smaller for mobile */
+        text-align: center;
+        margin-bottom: 20px; /* Consistent margin */
+    }
+    
+    .about-content h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .about-content p {
+        font-size: 0.95rem; /* Slightly smaller for mobile */
+        text-align: center;
+        line-height: 1.6; /* Better line height for readability */
+        margin-bottom: 15px; /* Consistent paragraph spacing */
+    }
+    
+    /* Mobile Services Section - FIXED: Better spacing */
+    .services-section {
+        padding: 40px 15px; /* Consistent padding */
+        margin: 20px 0; /* Add vertical margins for section separation */
+    }
+    
+    .services-grid {
+        gap: 25px; /* Consistent gap between service cards */
+        margin-top: 30px;
+    }
+    
+    /* Mobile Services Cards - maintain left alignment with consistent spacing */
+    .service-card {
+        flex-direction: column !important;
+        text-align: left; /* Keep left alignment on mobile */
+        gap: 20px;
+        padding: 20px 15px; /* Reduced padding for mobile */
+        margin-bottom: 15px; /* Add bottom margin between cards */
+    }
+    
+    .service-card.reverse {
+        flex-direction: column !important;
+    }
+    
+    .service-card.reverse .service-content {
+        text-align: left; /* Maintain left alignment for reverse cards on mobile */
+    }
+    
+    .service-content h3 {
+        font-size: 1.5rem;
+        text-align: left; /* Explicitly maintain left alignment on mobile */
+    }
+    
+    .service-image {
+        height: 200px;
+        width: 100%;
+    }
+    
+    /* Mobile Artist Section - ENHANCED: Better visual layout */
+    .artist-section {
+        padding: 60px 15px; /* Optimized padding */
+        padding-top: 72px;
+        width: 100%;
+        overflow: hidden; /* Prevent section overflow */
+        box-sizing: border-box;
+    }
+    
+    .artist-carousel-container {
+        width: 100%; /* Use 100% instead of 100vw */
+        max-width: 100%; /* Constrain to container */
+        padding: 0;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden; /* Hide horizontal overflow */
+    }
+    
+    .artist-carousel {
+        display: flex;
+        flex-direction: row;
+        gap: 15px; /* Slightly tighter spacing for mobile */
+        align-items: center;
+        justify-content: flex-start;
+        min-height: 400px; /* Slightly taller for better proportions */
+        width: auto; /* Auto width instead of max-content */
+        overflow-x: auto;
+        overflow-y: visible;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        padding: 25px 15px; /* Better padding for visual breathing room */
+        box-sizing: border-box;
+        transform: translateX(0); /* Reset any transforms */
+    }
+    
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .artist-carousel::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .artist-card {
+        min-width: 280px;
+        max-width: 280px;
+        width: 280px; /* Fixed width */
+        opacity: 1;
+        transform: scale(1);
+        scroll-snap-align: center;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 1;
+        border-radius: 15px; /* Enhanced border radius for modern look */
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+        transition: all 0.4s ease; /* Smoother transitions */
+    }
+    
+    .artist-card.active {
+        opacity: 1;
+        transform: scale(1.08); /* Slightly more pronounced scale */
+        border-color: rgba(186, 109, 47, 0.8);
+        box-shadow: 0 18px 40px rgba(186, 109, 47, 0.4); /* Enhanced glow */
+        z-index: 2;
+    }
+    
+    /* Enhanced card content spacing */
+    .artist-card .card-content {
+        padding: 25px 20px; /* Better internal spacing */
+    }
+    
+    .artist-card h3 {
+        margin-bottom: 15px; /* Better title spacing */
+        font-size: 1.4rem; /* Optimized font size for mobile */
+    }
+    
+    .artist-card .about-btn {
+        margin-top: 20px; /* Better button positioning */
+        padding: 12px 25px; /* Enhanced button size */
+        font-size: 14px; /* Optimized button text size */
+    }
+    
+    .artist-image {
+        height: 220px;
+    }
+    
+    .artist-info {
+        padding: 20px 15px;
+    }
+    
+    .artist-info h3 {
+        font-size: 1.2rem;
+        min-height: 40px;
+    }
+    
+    .carousel-controls {
+        flex-direction: row;
+        gap: 35px; /* Enhanced spacing */
+        margin-top: 35px;
+        justify-content: center;
+    }
+    
+    .carousel-btn {
+        width: 50px; /* Larger for better touch experience */
+        height: 50px;
+        font-size: 22px;
+        box-shadow: 0 8px 25px rgba(186, 109, 47, 0.4); /* Enhanced shadow */
+    }
+    
+    .carousel-btn:hover {
+        transform: scale(1.15); /* More pronounced hover */
+        box-shadow: 0 10px 30px rgba(186, 109, 47, 0.6);
+    }
+    
+    .carousel-indicators {
+        order: 0;
+        gap: 12px; /* Enhanced spacing between indicators */
+    }
+    
+    .indicator {
+        width: 14px; /* Slightly larger for better visibility */
+        height: 14px;
+        transition: all 0.4s ease; /* Smoother transitions */
+    }
+    
+    .indicator.active {
+        transform: scale(1.5); /* More prominent active state */
+        box-shadow: 0 4px 15px rgba(186, 109, 47, 0.5); /* Glow effect */
+    }
+    
+    /* Mobile Team Section */
+    .main-founder {
+        margin-bottom: 50px;
+    }
+    
+    .founder-image {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 20px;
+    }
+    
+    .founder-info {
+        padding: 25px 20px;
+    }
+    
+    .founder-info h3 {
+        font-size: 1.8rem;
+    }
+    
+    .founder-info .description {
+        text-align: left;
+        font-size: 0.95rem;
+    }
+    
+    .team-members {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .team-member {
+        padding: 25px 20px;
+    }
+    
+    .member-image {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 15px;
+    }
+    
+    .member-info h4 {
+        font-size: 1.3rem;
+    }
+    
+    .member-info .description {
+        font-size: 0.85rem;
+    }
+    
+    /* Mobile Contact Section - FIXED: Better spacing */
+    .contact-section {
+        padding: 40px 15px; /* Consistent padding */
+        margin: 20px 0; /* Add vertical margins */
+    }
+    
+    .contact-content {
+        padding: 20px 15px; /* Consistent padding */
+        gap: 20px; /* Add gap between elements */
+    }
+    
+    .contact-content h2 {
+        font-size: 2rem;
+        margin-bottom: 20px; /* Consistent margin */
+    }
+    
+    .contact-btn {
+        padding: 12px 30px;
+        font-size: 1rem;
+        margin-top: 15px; /* Add top margin */
+    }
+    
+    .fb-page-container {
+        padding: 15px;
+        margin-top: 25px; /* Add top margin for separation */
+    }
+    
+    /* Mobile Footer - FIXED: Better spacing */
+    .footer {
+        padding: 40px 15px 20px; /* Consistent padding */
+        margin-top: 30px; /* Add top margin for separation */
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 30px; /* Reduced gap for mobile */
+    }
+    
+    .footer-section {
+        margin-bottom: 25px; /* Add bottom margin for each section */
+    }
+    
+    .footer-links h4::after,
+    .footer-contact h4::after,
+    .footer-socials h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        margin-top: 10px; /* Add top margin for underline */
+    }
+    
+    .footer-links ul {
+        margin-top: 20px; /* Add top margin for links */
+        margin-bottom: 0;
+    }
+    
+    .footer-links li {
+        margin-bottom: 8px; /* Consistent spacing between links */
+    }
+    
+    .social-icons {
+        justify-content: center;
+        gap: 15px; /* Consistent gap between social icons */
+        margin-top: 20px;
+    }
+    
+    .footer-logo img {
+        width: 100px;
+        height: 100px;
+    }
+
+    /* Add overlay when menu is open */
+    body.menu-open {
+        overflow: hidden;
+    }
+}
+
+/* Small mobile devices - 480px breakpoint */
+@media screen and (max-width: 480px) {
+    .navbar {
+        padding: 0 10px;
+        height: 60px;
+    }
+    
+    .logo img {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .mobile-menu-btn {
+        transform: scale(0.9);
+    }
+    
+    .nav-links li a {
+        font-size: 18px;
+    }
+    
+    .hero-title {
+        font-size: 26px;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 25px; /* Consistent margin for small mobile */
+    }
+    
+    /* Small mobile about section - FIXED: Better spacing */
+    .about-content-wrapper {
+        padding: 10px; /* Minimal padding for small screens */
+        margin-bottom: 15px;
+    }
+    
+    .about-content {
+        padding: 15px 10px; /* Reduced padding for small screens */
+        gap: 12px; /* Tighter gap */
+    }
+    
+    .about-content h2 {
+        font-size: 2rem;
+        margin-bottom: 15px; /* Reduced margin */
+    }
+    
+    .about-content p {
+        font-size: 0.9rem; /* Slightly smaller text */
+        margin-bottom: 12px; /* Consistent spacing */
+    }
+    
+    /* Small mobile services - FIXED: Better spacing */
+    .services-section {
+        padding: 30px 10px; /* Reduced padding for small screens */
+        margin: 15px 0; /* Reduced margins */
+    }
+    
+    .services-grid {
+        gap: 20px; /* Tighter gap for small screens */
+        margin-top: 25px; /* Reduced top margin */
+    }
+    
+    .service-card {
+        padding: 15px 10px; /* Reduced padding for small screens */
+        margin-bottom: 12px; /* Consistent spacing */
+        gap: 15px; /* Tighter internal gap */
+    }
+    
+    .service-content h3 {
+        font-size: 1.3rem;
+        text-align: left; /* Maintain left alignment on small mobile */
+    }
+    
+    .service-image {
+        height: 180px;
+    }
+    
+    /* Small mobile artist section - ENHANCED: Better ultra-mobile layout */
+    .artist-section {
+        padding: 50px 10px; /* Add minimal horizontal padding */
+        padding-top: 72px;
+    }
+    
+    .artist-carousel-container {
+        width: 100%; /* Use percentage instead of viewport width */
+        max-width: 100%;
+        padding: 0;
+        margin: 0 auto;
+        overflow: hidden; /* Prevent overflow */
+    }
+    
+    .artist-carousel {
+        gap: 12px; /* Tighter spacing for small screens */
+        min-height: 360px; /* Slightly taller for better proportions */
+        padding: 20px 8px; /* Optimized padding */
+    }
+    
+    .artist-card {
+        min-width: 250px;
+        max-width: 250px;
+        width: 250px; /* Smaller for very small screens */
+    }
+    
+    .artist-image {
+        height: 200px;
+    }
+    
+    .artist-info {
+        padding: 15px 10px;
+    }
+    
+    .artist-info h3 {
+        font-size: 1.1rem;
+        min-height: 35px;
+    }
+    
+    .carousel-controls {
+        gap: 30px; /* Better spacing for small screens */
+        margin-top: 30px;
+    }
+    
+    .carousel-btn {
+        width: 45px; /* Slightly larger for better usability */
+        height: 45px;
+        font-size: 20px;
+        box-shadow: 0 6px 20px rgba(186, 109, 47, 0.4);
+    }
+    
+    .carousel-btn:hover {
+        transform: scale(1.1);
+        box-shadow: 0 8px 25px rgba(186, 109, 47, 0.6);
+    }
+    
+    /* Small mobile team adjustments */
+    .founder-info {
+        padding: 20px 15px;
+    }
+    
+    .founder-info h3 {
+        font-size: 1.5rem;
+    }
+    
+    /* Small mobile team section spacing */
+    .team-member {
+        padding: 15px 10px; /* Reduced padding */
+        margin-bottom: 10px; /* Consistent spacing */
+    }
+    
+    .member-info h4 {
+        font-size: 1.2rem;
+        margin-bottom: 8px; /* Consistent margin */
+    }
+    
+    /* Small mobile contact section - FIXED: Better spacing */
+    .contact-section {
+        padding: 30px 10px; /* Reduced padding for small screens */
+        margin: 15px 0; /* Reduced margins */
+    }
+    
+    .contact-content {
+        padding: 15px 10px; /* Reduced padding */
+        gap: 15px; /* Tighter gap */
+    }
+    
+    .contact-content h2 {
+        font-size: 1.8rem; /* Smaller title for small screens */
+        margin-bottom: 15px; /* Reduced margin */
+    }
+    
+    .contact-btn {
+        padding: 10px 25px; /* Reduced padding */
+        font-size: 0.95rem; /* Slightly smaller text */
+        margin-top: 12px; /* Reduced top margin */
+    }
+    
+    .fb-page-container {
+        padding: 12px; /* Reduced padding */
+        margin-top: 20px; /* Reduced top margin */
+    }
+    
+    /* Small mobile footer - FIXED: Better spacing */
+    .footer {
+        padding: 30px 10px 15px; /* Reduced padding for small screens */
+        margin-top: 20px; /* Reduced top margin */
+    }
+    
+    .footer-content {
+        gap: 20px; /* Tighter gap for small screens */
+    }
+    
+    .footer-section {
+        margin-bottom: 20px; /* Reduced bottom margin */
+    }
+    
+    .footer-links h4,
+    .footer-contact h4,
+    .footer-socials h4 {
+        font-size: 1.1rem; /* Slightly smaller titles */
+        margin-bottom: 12px; /* Consistent margin */
+    }
+    
+    .footer-links ul {
+        margin-top: 15px; /* Reduced top margin */
+    }
+    
+    .footer-links li {
+        margin-bottom: 6px; /* Tighter spacing */
+        font-size: 0.9rem; /* Slightly smaller text */
+    }
+    
+    .social-icons {
+        gap: 12px; /* Tighter gap for small screens */
+        margin-top: 15px; /* Reduced top margin */
+    }
+    
+    .social-icons a {
+        width: 35px; /* Slightly smaller social icons */
+        height: 35px;
+    }
+    
+    .footer-logo img {
+        width: 80px; /* Smaller logo for small screens */
+        height: 80px;
+        margin-bottom: 15px; /* Add bottom margin */
+    }
+    
+    .footer-bottom {
+        padding: 15px 10px; /* Reduced padding */
+        margin-top: 20px; /* Reduced top margin */
+        font-size: 0.85rem; /* Smaller copyright text */
+    }
+}
+
+/* Global Responsive Spacing Fixes */
+@media screen and (max-width: 768px) {
+    /* Ensure consistent section spacing */
+    section {
+        margin-bottom: 25px; /* Consistent bottom margin for all sections */
+    }
+    
+    /* Fix any remaining spacing issues */
+    .hero-section {
+        margin-bottom: 0; /* Hero doesn't need bottom margin */
+    }
+    
+    .about-section {
+        padding: 40px 15px; /* Consistent section padding */
+    }
+    
+    .services-section {
+        padding: 40px 15px;
+    }
+    
+    .artist-section {
+        padding: 60px 15px;
+        padding-top: 72px;
+    }
+    
+    .team-section {
+        padding: 40px 15px; /* Consistent team section padding */
+    }
+    
+    .contact-section {
+        padding: 40px 15px;
+    }
+    
+    .footer {
+        margin-top: 30px; /* Consistent footer separation */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Tighter spacing for very small screens */
+    section {
+        margin-bottom: 20px; /* Reduced margin for small screens */
+    }
+    
+    .about-section {
+        padding: 30px 10px; /* Reduced padding for small screens */
+    }
+    
+    .services-section {
+        padding: 30px 10px;
+    }
+    
+    .artist-section {
+        padding: 50px 10px;
+        padding-top: 72px;
+    }
+    
+    .team-section {
+        padding: 30px 10px;
+    }
+    
+    .contact-section {
+        padding: 30px 10px;
+    }
+    
+    .footer {
+        margin-top: 20px;
+    }
+}
