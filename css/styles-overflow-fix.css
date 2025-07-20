@@ -1,0 +1,79 @@
+/* Overflow Fix Styles - Minimal approach to avoid scroll interference */
+
+/* Basic overflow prevention */
+html {
+    scroll-behavior: smooth !important; /* Force smooth scrolling */
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    box-sizing: border-box;
+    /* Don't restrict vertical scrolling */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Ensure all sections stay within viewport - MINIMAL */
+section {
+    overflow-x: hidden;
+}
+
+/* Only fix containers that actually cause overflow */
+.artist-carousel,
+.team-members,
+.footer-content {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Ensure images don't cause overflow */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* TESTING: Temporarily comment out restrictive rules
+.hero-section {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+.navbar {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+*/
+
+/* Prevent text overflow */
+.description,
+.intro-text {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Mobile-specific overflow fixes */
+@media screen and (max-width: 768px) {
+    html, body {
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+    
+    /* Ensure all major containers don't overflow on mobile */
+    .hero-section,
+    .about-section,
+    .services-section,
+    .artist-section,
+    .team-section,
+    .news-section,
+    .contact-cta,
+    .footer {
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+}

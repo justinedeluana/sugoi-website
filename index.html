@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sugoi Music Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles-main.css">
+    <link rel="stylesheet" href="css/styles-responsive.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="assets/sugoi-logo.png" alt="Sugoi Music Studio Logo" />
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#artist">Artist</a></li>
+                <li><a href="#team">Our Team</a></li>
+                <li><a href="#news">News</a></li>
+            </ul>
+            <a href="https://www.facebook.com/sugoimusicstudio" class="nav-btn">Book Now</a>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero-section">
+        <div class="video-bg">
+            <video autoplay muted loop playsinline poster="assets/video-fallback.jpg">
+                <source src="assets/sugoi-bg.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="hero-content">
+                <h1 class="hero-title fade-in">More than sound — we create stories in every session</h1>
+            </div>
+        </div>
+    </section>
+  
+    <!-- About Section --> 
+    <section id="about" class="about-section">
+        <div class="about-background">
+            <img src="assets/sugoi-about.jpg" alt="Sugoi Music Studio Recording Session">
+            <div class="about-overlay"></div>
+        </div>
+        <div class="about-content-wrapper">
+            <div class="about-content slide-up">
+                <h2>About Us</h2>
+                <p>Founded in 2021, Sugoi Music Studio was built with one vision in mind — to create a premium space where music comes alive. With top-quality instruments, acoustically treated rooms, and a vibe that fuels creativity, we offer more than just a studio — we deliver an experience.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <!-- Parallax decorative elements -->
+        <div class="parallax-decoration circle-1"></div>
+        <div class="parallax-decoration circle-2"></div>
+        
+        <h2 class="section-title slide-up">Our Services</h2>
+        
+        <div class="services-container">
+            <!-- Service Card 1 -->
+            <div class="service-card stagger-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-content">
+                    <h3>Studio Rehearsal</h3>
+                    <p class="price">400 Pesos per hour</p>
+                    <button class="book-btn" onclick="bookService('Studio Rehearsal')">
+                        <span class="icon">📋</span> Book
+                    </button>
+                </div>
+                <div class="service-image">
+                    <img src="assets/rehearsal.jpg" alt="Band rehearsing in studio">
+                </div>
+            </div>
+            
+            <!-- Service Card 2 -->
+            <div class="service-card reverse stagger-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-image">
+                    <img src="assets/performance.jpg" alt="Live video performance">
+                </div>
+                <div class="service-content">
+                    <h3>Live Video Performance</h3>
+                    <p class="price">6000 Pesos per Song | Solo / Duo</p>
+                    <p class="price">9500 Pesos per Song | Band/ Group</p>
+                    <button class="book-btn" onclick="bookService('Live Video Performance')">
+                        <span class="icon">📋</span> Book
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Service Card 3 -->
+            <div class="service-card stagger-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-content">
+                    <h3>Social Media<br>Live Stream</h3>
+                    <p class="price">1000 Pesos per hour</p>
+                    <button class="book-btn" onclick="bookService('Social Media Live Stream')">
+                        <span class="icon">📋</span> Book
+                    </button>
+                </div>
+                <div class="service-image">
+                    <img src="assets/livestream.jpg" alt="Social media live streaming">
+                </div>
+            </div>
+            
+            <!-- Service Card 4 -->
+            <div class="service-card reverse stagger-item" data-aos="fade-up" data-aos-delay="400">
+                <div class="service-image">
+                    <img src="assets/recording.jpg" alt="Multitrack recording studio">
+                </div>
+                <div class="service-content">
+                    <h3>Multitrack Recording</h3>
+                    <p class="price-special">FREE STEMS</p>
+                    <p class="price">800 Pesos per hour</p>
+                    <button class="book-btn" onclick="bookService('Multitrack Recording')">
+                        <span class="icon">📋</span> Book
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Service Card 5 -->
+            <div class="service-card stagger-item" data-aos="fade-up" data-aos-delay="500">
+                <div class="service-content">
+                    <h3>Podcast Recording</h3>
+                    <p class="sub-heading">with Multi-Angle Camera</p>
+                    <p class="price">1500 Pesos per hour</p>
+                    <button class="book-btn" onclick="bookService('Podcast Recording')">
+                        <span class="icon">📋</span> Book
+                    </button>
+                </div>
+                <div class="service-image">
+                    <img src="assets/podcast.jpg" alt="Podcast recording session">
+                </div>
+            </div>
+            
+            <!-- Service Card 6 -->
+            <div class="service-card reverse stagger-item" data-aos="fade-up" data-aos-delay="600">
+                <div class="service-image">
+                    <img src="assets/mixing.jpg" alt="Live mix recording equipment">
+                </div>
+                <div class="service-content">
+                    <h3>Live Mix Recording</h3>
+                    <p class="sub-heading">with Video</p>
+                    <p class="price">1000 Pesos per hour</p>
+                    <button class="book-btn" onclick="bookService('Live Mix Recording')">
+                        <span class="icon">📋</span> Book
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="other-offers">
+            <button class="other-offers-btn pulse" onclick="showOtherOffers()">Other Offers</button>
+        </div>
+    </section>
+
+    <!-- Artist Section -->
+    <section id="artist" class="artist-section">
+        <!-- Parallax decorative elements -->
+        <div class="parallax-decoration wave"></div>
+        
+        <h2 class="section-title slide-up">Notable Artist</h2>
+        
+        <div class="artist-grid-container scale-up">
+            <!-- Artist Card 1 -->
+            <div class="flip-card-container" style="--hue: 220">
+                <div class="flip-card">
+                    <div class="card-front">
+                        <figure>
+                            <div class="img-bg"></div>
+                            <img src="assets/artist-hawaiian-combo-meal.jpg" alt="Hawaiian Combo Meal">
+                            <figcaption>Hawaiian Combo Meal</figcaption>
+                        </figure>
+                        <ul>
+                            <li>Multi-genre Band</li>
+                            <li>Island Vibes Music</li>
+                            <li>Professional Live Shows</li>
+                            <li>Studio Recordings</li>
+                            <li>Event Performances</li>
+                        </ul>
+                    </div>
+                    <div class="card-back">
+                        <figure>
+                            <div class="img-bg"></div>
+                            <img src="assets/artist-hawaiian-combo-meal.jpg" alt="Hawaiian Combo Meal">
+                        </figure>
+                        <button onclick="viewArtist('Hawaiian Combo Meal')">View Artist</button>
+                        <div class="design-container">
+                            <span class="design design--1"></span>
+                            <span class="design design--2"></span>
+                            <span class="design design--3"></span>
+                            <span class="design design--4"></span>
+                            <span class="design design--5"></span>
+                            <span class="design design--6"></span>
+                            <span class="design design--7"></span>
+                            <span class="design design--8"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Artist Card 2 -->
+            <div class="flip-card-container" style="--hue: 170">
+                <div class="flip-card">
+                    <div class="card-front">
+                        <figure>
+                            <div class="img-bg"></div>
+                            <img src="assets/artist-m-soul.jpg" alt="M-SOUL">
+                            <figcaption>M-SOUL</figcaption>
+                        </figure>
+                        <ul>
+                            <li>R&B Artist</li>
+                            <li>Soulful Vocals</li>
+                            <li>Original Compositions</li>
+                            <li>Live Performances</li>
+                            <li>Studio Sessions</li>
+                        </ul>
+                    </div>
+                    <div class="card-back">
+                        <figure>
+                            <div class="img-bg"></div>
+                            <img src="assets/artist-m-soul.jpg" alt="M-SOUL">
+                        </figure>
+                        <button onclick="viewArtist('M-SOUL')">View Artist</button>
+                        <div class="design-container">
+                            <span class="design design--1"></span>
+                            <span class="design design--2"></span>
+                            <span class="design design--3"></span>
+                            <span class="design design--4"></span>
+                            <span class="design design--5"></span>
+                            <span class="design design--6"></span>
+                            <span class="design design--7"></span>
+                            <span class="design design--8"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Artist Card 3 -->
+            <div class="flip-card-container" style="--hue: 350">
+                <div class="flip-card">
+                    <div class="card-front">
+                        <figure>
+                            <div class="img-bg"></div>
+                            <img src="assets/artist-18flnch.jpg" alt="18FLNCH">
+                            <figcaption>18FLNCH</figcaption>
+                        </figure>
+                        <ul>
+                            <li>Hip-Hop Artist</li>
+                            <li>Rap & Freestyle</li>
+                            <li>Urban Music</li>
+                            <li>Beat Production</li>
+                            <li>Music Videos</li>
+                        </ul>
+                    </div>
+                    <div class="card-back">
+                        <figure>
+                            <div class="img-bg"></div>
+                            <img src="assets/artist-18flnch.jpg" alt="18FLNCH">
+                        </figure>
+                        <button onclick="viewArtist('18FLNCH')">View Artist</button>
+                        <div class="design-container">
+                            <span class="design design--1"></span>
+                            <span class="design design--2"></span>
+                            <span class="design design--3"></span>
+                            <span class="design design--4"></span>
+                            <span class="design design--5"></span>
+                            <span class="design design--6"></span>
+                            <span class="design design--7"></span>
+                            <span class="design design--8"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Artist Card 4 -->
+            <div class="flip-card-container" style="--hue: 280">
+                <div class="flip-card">
+                    <div class="card-front">
+                        <figure>
+                            <div class="img-bg"></div>
+                            <img src="assets/artist-band-4.jpg" alt="The Harmonics">
+                            <figcaption>The Harmonics</figcaption>
+                        </figure>
+                        <ul>
+                            <li>Rock Band</li>
+                            <li>Harmony Vocals</li>
+                            <li>Original Songs</li>
+                            <li>Live Concerts</li>
+                            <li>Album Production</li>
+                        </ul>
+                    </div>
+                    <div class="card-back">
+                        <figure>
+                            <div class="img-bg"></div>
+                            <img src="assets/artist-band-4.jpg" alt="The Harmonics">
+                        </figure>
+                        <button onclick="viewArtist('The Harmonics')">View Artist</button>
+                        <div class="design-container">
+                            <span class="design design--1"></span>
+                            <span class="design design--2"></span>
+                            <span class="design design--3"></span>
+                            <span class="design design--4"></span>
+                            <span class="design design--5"></span>
+                            <span class="design design--6"></span>
+                            <span class="design design--7"></span>
+                            <span class="design design--8"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Artist Card 5 -->
+            <div class="flip-card-container" style="--hue: 120">
+                <div class="flip-card">
+                    <div class="card-front">
+                        <figure>
+                            <div class="img-bg"></div>
+                            <img src="assets/artist-acoustic-duo.jpg" alt="Echo Valley">
+                            <figcaption>Echo Valley</figcaption>
+                        </figure>
+                        <ul>
+                            <li>Acoustic Duo</li>
+                            <li>Folk & Country</li>
+                            <li>Intimate Performances</li>
+                            <li>Original Ballads</li>
+                            <li>Coffee Shop Gigs</li>
+                        </ul>
+                    </div>
+                    <div class="card-back">
+                        <figure>
+                            <div class="img-bg"></div>
+                            <img src="assets/artist-acoustic-duo.jpg" alt="Echo Valley">
+                        </figure>
+                        <button onclick="viewArtist('Echo Valley')">View Artist</button>
+                        <div class="design-container">
+                            <span class="design design--1"></span>
+                            <span class="design design--2"></span>
+                            <span class="design design--3"></span>
+                            <span class="design design--4"></span>
+                            <span class="design design--5"></span>
+                            <span class="design design--6"></span>
+                            <span class="design design--7"></span>
+                            <span class="design design--8"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Artist Card 6 -->
+            <div class="flip-card-container" style="--hue: 50">
+                <div class="flip-card">
+                    <div class="card-front">
+                        <figure>
+                            <div class="img-bg"></div>
+                            <img src="assets/artist-electronic.jpg" alt="Neon Pulse">
+                            <figcaption>Neon Pulse</figcaption>
+                        </figure>
+                        <ul>
+                            <li>Electronic Music</li>
+                            <li>DJ & Producer</li>
+                            <li>Club Performances</li>
+                            <li>Remix Specialist</li>
+                            <li>Festival Shows</li>
+                        </ul>
+                    </div>
+                    <div class="card-back">
+                        <figure>
+                            <div class="img-bg"></div>
+                            <img src="assets/artist-electronic.jpg" alt="Neon Pulse">
+                        </figure>
+                        <button onclick="viewArtist('Neon Pulse')">View Artist</button>
+                        <div class="design-container">
+                            <span class="design design--1"></span>
+                            <span class="design design--2"></span>
+                            <span class="design design--3"></span>
+                            <span class="design design--4"></span>
+                            <span class="design design--5"></span>
+                            <span class="design design--6"></span>
+                            <span class="design design--7"></span>
+                            <span class="design design--8"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- View More Artists Button -->
+        <div class="more-artists-container">
+            <button class="more-artists-btn" onclick="showMoreArtists()">
+                <span>View More Artists</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+    </section>
+
+    <!-- Our Team Section -->
+    <section id="team" class="team-section">
+        <!-- Parallax decorative elements -->
+        <div class="parallax-decoration circle-1" style="top: 60%; right: 5%;"></div>
+        <div class="parallax-decoration circle-2" style="top: 10%; left: 10%;"></div>
+        
+        <center><h2 class="section-title slide-up">FOUNDERS</h2></center>
+        
+        <div class="team-container">
+            <!-- Main Founder -->
+            <div class="main-founder slide-left">
+                <div class="founder-image">
+                    <img src="assets/founder-main.jpg" alt="Main Founder">
+                </div>
+                <div class="founder-info">
+                    <h3>Justin Edeluana</h3>
+                    <p class="position">Founder & CEO</p>
+                    <p class="description">
+                        Visionary founder and CEO of Sugoi Music Studio. With over 10 years of experience in the music industry, 
+                        Justin has built a reputation for excellence in audio production and artist development. His passion for 
+                        music and commitment to quality has made Sugoi Music Studio the premier destination for musicians seeking 
+                        professional recording services. Under his leadership, the studio has become a creative haven where artists 
+                        can bring their musical visions to life with state-of-the-art equipment and expert guidance.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Other Team Members -->
+            <div class="team-members slide-right">
+                <div class="team-member stagger-item">
+                    <div class="member-image">
+                        <img src="assets/team-member-1.jpg" alt="Team Member 1">
+                    </div>
+                    <div class="member-info">
+                        <h4>Alex Rodriguez</h4>
+                        <p class="position">Audio Engineer</p>
+                        <p class="description">
+                            Expert audio engineer with a keen ear for detail and a passion for bringing out the best in every recording. 
+                            Alex specializes in mixing and mastering, ensuring that every track meets the highest professional standards. 
+                            With experience working with various genres from rock to electronic music, Alex brings versatility and 
+                            technical expertise to every session.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="team-member stagger-item">
+                    <div class="member-image">
+                        <img src="assets/team-member-2.jpg" alt="Team Member 2">
+                    </div>
+                    <div class="member-info">
+                        <h4>Maria Santos</h4>
+                        <p class="position">Producer</p>
+                        <p class="description">
+                            Creative producer and songwriter who helps artists shape their sound and realize their artistic vision. 
+                            Maria has worked with both emerging and established artists, bringing fresh perspectives and innovative 
+                            production techniques to every project. Her collaborative approach and musical intuition make her an 
+                            invaluable part of the creative process.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="team-member stagger-item">
+                    <div class="member-image">
+                        <img src="assets/team-member-3.jpg" alt="Team Member 3">
+                    </div>
+                    <div class="member-info">
+                        <h4>David Kim</h4>
+                        <p class="position">Studio Manager</p>
+                        <p class="description">
+                            Dedicated studio manager who ensures smooth operations and exceptional client experiences. David coordinates 
+                            sessions, manages equipment maintenance, and provides technical support to artists and engineers. His 
+                            attention to detail and commitment to service excellence keeps Sugoi Music Studio running at peak performance 
+                            day in and day out.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="sugoi-team.html" class="nav-btn">View Other Members</a>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="news-section">
+        <h2 class="section-title slide-up">News</h2>
+        <div class="news-container scale-up">
+            <!-- Facebook Page Plugin -->
+            <div id="fb-root"></div>
+            <div class="fb-page-container">
+                <div class="fb-page" 
+                     data-href="https://www.facebook.com/sugoimusicstudio" 
+                     data-tabs="timeline"
+                     data-width="500" 
+                     data-height="600" 
+                     data-small-header="false" 
+                     data-adapt-container-width="true" 
+                     data-hide-cover="false" 
+                     data-show-facepile="true">
+                    <blockquote cite="https://www.facebook.com/sugoimusicstudio" class="fb-xfbml-parse-ignore">
+                        <a href="https://www.facebook.com/sugoimusicstudio">Sugoi Music Studio</a>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-cta">
+        <div class="contact-background">
+            <img src="assets/contact-background.jfif" alt="Studio Recording Session">
+            <div class="contact-overlay"></div>
+        </div>
+        <div class="contact-content">
+            <h2>Interested on us?</h2>
+            <button class="contact-btn" onclick="window.location.href='sugoi-contact.html'">Contact Us</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="assets/sugoi-logo.png" alt="Sugoi Music Studio Logo">
+                <h3>Sugoi Music Studio</h3>
+                <p class="address">17 Finland Street, Don Bosco, Parañaque, Philippines</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Sugoi Music Studio</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#artist">Artist</a></li>
+                    <li><a href="#team">Our Team</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <a href="#contact" class="footer-contact-link">Contact Us</a>
+            </div>
+            
+            <div class="footer-socials">
+                <h4>Socials</h4>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/sugoimusicstudio" target="_blank" class="social-icon facebook">
+                        <img src="assets/icons/facebook.png" alt="Facebook">
+                    </a>
+                    <a href="https://www.tiktok.com/@sugoi.music.studio?is_from_webapp=1&sender_device=pc" target="_blank" class="social-icon tiktok">
+                        <img src="assets/icons/tiktok.png" alt="TikTok">
+                    </a>
+                    <a href="https://www.instagram.com/sugoimusicstudio?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="social-icon instagram">
+                        <img src="assets/icons/instagram.png" alt="Instagram">
+                    </a>
+                    <a href="https://www.youtube.com/@sugoimusicstudio" target="_blank" class="social-icon youtube">
+                        <img src="assets/icons/youtube.png" alt="YouTube">
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>Copyright 2025 Sugoi Music Studios. All Right Reserved</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for smooth scrolling -->
+    <script src="scripts/script.js"></script>
+    <!-- Facebook SDK for JavaScript -->
+    <script src="scripts/facebook-integration.js"></script>
+
+</body>
+</html>
